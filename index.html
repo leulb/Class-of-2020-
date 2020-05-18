@@ -6,6 +6,7 @@
   <title>Wittenberg University Self-Tour</title>
   <link href="CSS/styles.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+
   <script>
     function indexOfMax(arr) {
       if (arr.length == 0) {
@@ -22,6 +23,8 @@
       }
       return maxIndex;
     }
+  </script>
+  <script>
     async function app() {
       document.getElementById('console').innerHTML = 'Loading model..';
 
@@ -39,6 +42,22 @@
       const guess = poss[guessNum];
       console.log(arr);
       document.getElementById('console').innerHTML = guess;
+      console.log(guessNum);
+      if (guess === "Blair") {
+        window.location = "C:/Users/HAPPY2019/Class of 2020/blair.html";
+      }if (guess === "Hollenbeck") {
+        window.location = "C:/Users/HAPPY2019/Class of 2020/hollenbeck.html";
+      }if (guess === "Koch") {
+        window.location = "C:/Users/HAPPY2019/Class of 2020/koch.html";
+      }if (guess === "Krieg") {
+        window.location = "C:/Users/HAPPY2019/Class of 2020/krieg.html";
+      }if (guess === "Science") {
+        window.location = "C:/Users/HAPPY2019/Class of 2020/scince.html";
+      }if (guess === "Synod") {
+        window.location = "C:/Users/HAPPY2019/Class of 2020/synod.html";
+      }if (guess === "Zimmerman") {
+        window.location = "C:/Users/HAPPY2019/Class of 2020/zimmerman.html";
+      }
     }
   </script>
 </head>
@@ -53,7 +72,6 @@
 
   <img name="slide" width="500" height="500" class="first" border="10mm ridge black" />
   <h3 class="text" background-color="black">Click Bellow to scan your first bulding</h3>
-  <video autoplay id="webcam" width="224" height="224"></video>
   <p id="console" class="center">Waiting</p>
   <!-- Add an image that we will use to test -->
   <img id="img" width="224" height="224" style="display: none;" />
@@ -64,6 +82,8 @@
     }
   </script>
   <!-- Load index.js after the content of the page -->
+  <br>
+  <br>
   <p><label for="image" style="cursor: pointer;" class="center">Scan Bulding</label></p>
   <input class="first" type="file" accept="image/*" id="image" name="image" onchange="loadFile(event)" style="display: none;" />
   <button class="center" id="Start" onclick="app()">Start The App</button>
